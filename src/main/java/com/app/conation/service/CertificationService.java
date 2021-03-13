@@ -1,12 +1,12 @@
 package com.app.conation.service;
 
 import com.app.conation.domain.Certification;
-import com.app.conation.domain.CertificationRepository;
+import com.app.conation.repository.CertificationRepository;
 import com.app.conation.domain.draw.MessageSender;
 import com.app.conation.domain.draw.UserMessageParameters;
-import com.app.conation.exception.NotFoundCertificationException;
-import com.app.conation.request.CertificatePhoneNumberReq;
-import com.app.conation.request.ValidatePhoneNumberReq;
+import com.app.conation.advice.exceptions.NotFoundCertificationException;
+import com.app.conation.requestdto.CertificatePhoneNumberReq;
+import com.app.conation.requestdto.ValidatePhoneNumberReq;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +22,7 @@ public class CertificationService {
     private final MessageSender messageSender;
 
     public Long sendCertificationMessage(CertificatePhoneNumberReq request) {
-        UserMessageParameters userMessageParameters = messageSender.userPhoneNumberSetting(request.getPhoneNumber());
+        UserMessageParameters userMessageParameters = messageSender.userPhoneNumberSettingToCertification(request.getPhoneNumber());
         String certificationNumber = userMessageParameters.getParameters().get("text");
         Certification certification = Certification.builder()
                 .certificationNumber(certificationNumber)

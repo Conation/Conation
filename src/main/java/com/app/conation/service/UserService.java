@@ -1,14 +1,13 @@
 package com.app.conation.service;
 
-import com.app.conation.domain.Region;
-import com.app.conation.domain.RegionRepository;
-import com.app.conation.domain.User;
-import com.app.conation.domain.UserRepository;
+import com.app.conation.domain.*;
 import com.app.conation.domain.draw.RandomPrize;
+import com.app.conation.repository.RegionRepository;
+import com.app.conation.repository.UserRepository;
 import com.app.conation.response.dto.MyScoreRes;
-import com.app.conation.request.SignInReq;
-import com.app.conation.request.SignUpReq;
-import com.app.conation.exception.*;
+import com.app.conation.requestdto.SignInReq;
+import com.app.conation.requestdto.SignUpReq;
+import com.app.conation.advice.exceptions.*;
 import com.app.conation.jwt.JwtProvider;
 import com.app.conation.util.StringUtility;
 import lombok.RequiredArgsConstructor;
@@ -31,7 +30,6 @@ public class UserService {
 
     public void userSignUp(SignUpReq signUpReq) {
         isPasswordsEqual(signUpReq);
-
         isValidId(signUpReq);
 
         User signUpUser = User.builder()
@@ -40,6 +38,8 @@ public class UserService {
             .regionId(getRegionByCityId(signUpReq.getRegionId()))
             .password(passwordEncoder.encode(signUpReq.getPassword()))
             .phoneNumber(StringUtility.subHyphen(signUpReq.getPhoneNumber()))
+            .experiencePoint(0L)
+            .state(State.ACTIVE)
             .roles(Collections.singletonList("ROLE_USER"))
             .build();
 

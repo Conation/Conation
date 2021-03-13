@@ -24,11 +24,6 @@ public enum BaseResponseStatus {
 
     NOT_EXIST_USER_ERROR(false, 2500, "존재하지 않는 회원입니다."),
     MESSAGE_SEND_FAIL_ERROR(false, 2600, "메세지 전송에 실패하였습니다."),
-    NOT_ENOUGH_POINT_ERROR(false, 2700, "포인트가 부족합니다.");
-
-    NOT_EXIST_USER_ERROR(false, 2500, "존제하지 않는 회원입니다."),
-    MESSAGE_SEND_FAIL_ERROR(false, 2600, "메세지 전송에 실패하였습니다."),
-
     NOT_ENOUGH_POINT_ERROR(false, 2700, "포인트가 부족합니다.")
     ;
 

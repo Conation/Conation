@@ -1,6 +1,6 @@
 package com.app.conation.advice;
 
-import com.app.conation.exception.NotEnoughPointException;
+import com.app.conation.advice.exceptions.NotEnoughPointException;
 import com.app.conation.response.BaseResponse;
 import com.app.conation.response.BaseResponseStatus;
 import lombok.AllArgsConstructor;

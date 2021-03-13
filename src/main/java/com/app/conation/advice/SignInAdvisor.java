@@ -1,6 +1,6 @@
 package com.app.conation.advice;
 
-import com.app.conation.exception.*;
+import com.app.conation.advice.exceptions.*;
 import com.app.conation.response.BaseResponse;
 import com.app.conation.response.BaseResponseStatus;
 import lombok.AllArgsConstructor;

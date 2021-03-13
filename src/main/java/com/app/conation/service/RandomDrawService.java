@@ -1,11 +1,11 @@
 package com.app.conation.service;
 
 import com.app.conation.domain.User;
-import com.app.conation.domain.UserRepository;
+import com.app.conation.repository.UserRepository;
 import com.app.conation.domain.draw.RandomPrize;
 import com.app.conation.response.dto.DrawRes;
-import com.app.conation.exception.NotEnoughPointException;
-import com.app.conation.exception.NotExistUserException;
+import com.app.conation.advice.exceptions.NotEnoughPointException;
+import com.app.conation.advice.exceptions.NotExistUserException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

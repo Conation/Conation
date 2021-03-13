@@ -1,6 +1,5 @@
 package com.app.conation.domain;
 
-import com.app.conation.config.BaseEntity;
 import lombok.*;
 
 import javax.persistence.*;

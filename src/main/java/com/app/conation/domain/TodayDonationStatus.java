@@ -1,6 +1,5 @@
 package com.app.conation.domain;
 
-import com.app.conation.config.BaseEntity;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

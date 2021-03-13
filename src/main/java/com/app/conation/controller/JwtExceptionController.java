@@ -1,6 +1,6 @@
 package com.app.conation.controller;
 
-import com.app.conation.exception.JWTDecodeException;
+import com.app.conation.advice.exceptions.JWTDecodeException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

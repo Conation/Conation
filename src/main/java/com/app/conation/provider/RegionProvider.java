@@ -1,8 +1,8 @@
 package com.app.conation.provider;
 
 import com.app.conation.domain.Region;
-import com.app.conation.domain.RegionRepository;
-import com.app.conation.exception.BaseException;
+import com.app.conation.repository.RegionRepository;
+import com.app.conation.advice.exceptions.BaseException;
 import com.app.conation.response.BaseResponseStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

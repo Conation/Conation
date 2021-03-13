@@ -2,8 +2,8 @@ package com.app.conation.provider;
 
 import com.app.conation.domain.Region;
 import com.app.conation.domain.TodayDonationStatus;
-import com.app.conation.domain.TodayDonationStatusRepository;
-import com.app.conation.exception.BaseException;
+import com.app.conation.repository.TodayDonationStatusRepository;
+import com.app.conation.advice.exceptions.BaseException;
 import com.app.conation.response.BaseResponseStatus;
 import com.app.conation.response.dto.GetDonationStatusRes;
 import com.app.conation.response.RegionDonationStatus;

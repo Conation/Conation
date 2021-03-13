@@ -1,6 +1,6 @@
 package com.app.conation.advice;
 
-import com.app.conation.exception.NotFoundCertificationException;
+import com.app.conation.advice.exceptions.NotFoundCertificationException;
 import com.app.conation.response.BaseResponse;
 import com.app.conation.response.BaseResponseStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;

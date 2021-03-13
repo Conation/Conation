@@ -1,8 +1,7 @@
 package com.app.conation.controller;
 
-import com.app.conation.domain.draw.UserMessageParameters;
-import com.app.conation.request.CertificatePhoneNumberReq;
-import com.app.conation.request.ValidatePhoneNumberReq;
+import com.app.conation.requestdto.CertificatePhoneNumberReq;
+import com.app.conation.requestdto.ValidatePhoneNumberReq;
 import com.app.conation.response.BaseResponse;
 import com.app.conation.response.BaseResponseStatus;
 import com.app.conation.service.CertificationService;

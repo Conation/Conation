@@ -1,26 +1,24 @@
 package com.app.conation.domain.draw;
 
 import com.app.conation.domain.User;
-import com.app.conation.exception.MessageSendFailException;
+import com.app.conation.advice.exceptions.MessageSendFailException;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
+import org.json.simple.JSONObject;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
+
+import static com.app.conation.util.Constant.*;
 
 @Component
 public class MessageSender {
 
-    private static final String ADMIN_PHONE_NUMBER = "01045692804";
-    private static final String API_KEY = "NCSIZKOCGQT8ZIHO";
-    private static final String API_SECRET_KEY = "JTD0T4SEUDTRQSHNPATERTRKFSTCK80Y";
-
     private final Message coolSms = new Message(API_KEY, API_SECRET_KEY);
 
-    public UserMessageParameters userInformationSetting(User user, DayPrice price) {
+    public UserMessageParameters userInformationSettingToPrize(User user, DayPrice price) {
         UserMessageParameters params = new UserMessageParameters();
         params.setParam("to", user.getPhoneNumber());
         params.setParam("from", ADMIN_PHONE_NUMBER);
@@ -30,7 +28,7 @@ public class MessageSender {
         return params;
     }
 
-    public UserMessageParameters userPhoneNumberSetting(String phoneNumber) {
+    public UserMessageParameters userPhoneNumberSettingToCertification(String phoneNumber) {
         String randomNumber = generateRandomNumber();
         UserMessageParameters params = new UserMessageParameters();
         params.setParam("to", phoneNumber);
@@ -41,7 +39,7 @@ public class MessageSender {
         return params;
     }
 
-    public String generateRandomNumber() {
+    private String generateRandomNumber() {
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 0; i < 4; i++) {
             ThreadLocalRandom random = ThreadLocalRandom.current();
@@ -51,10 +49,10 @@ public class MessageSender {
         return stringBuilder.toString();
     }
 
-    public void sendSMS(UserMessageParameters userParams) {
+    public JSONObject sendSMS(UserMessageParameters userParams) {
         Map<String, String> params = userParams.getParameters();
         try {
-            coolSms.send((HashMap<String, String>) params);
+            return coolSms.send((HashMap<String, String>) params);
         } catch (CoolsmsException e) {
             throw new MessageSendFailException();
         }

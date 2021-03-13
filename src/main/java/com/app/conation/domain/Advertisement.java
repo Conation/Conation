@@ -1,6 +1,5 @@
 package com.app.conation.domain;
 
-import com.app.conation.config.BaseEntity;
 import com.app.conation.enums.AdvertisementCategory;
 import com.app.conation.response.dto.GetAdvertisementRes;
 import lombok.*;

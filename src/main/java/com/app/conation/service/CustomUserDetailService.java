@@ -1,7 +1,7 @@
 package com.app.conation.service;
 
-import com.app.conation.domain.UserRepository;
-import com.app.conation.exception.JWTDecodeException;
+import com.app.conation.repository.UserRepository;
+import com.app.conation.advice.exceptions.JWTDecodeException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

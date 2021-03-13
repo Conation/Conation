@@ -1,6 +1,6 @@
 package com.app.conation.config;
 
-import com.app.conation.exception.BaseException;
+import com.app.conation.advice.exceptions.BaseException;
 import com.app.conation.response.BaseResponse;
 import com.app.conation.response.BaseResponseStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;

@@ -1,14 +1,12 @@
 package com.app.conation.service;
 
 import com.app.conation.domain.TodayDonationStatus;
-import com.app.conation.domain.TodayDonationStatusRepository;
+import com.app.conation.repository.TodayDonationStatusRepository;
 import com.app.conation.domain.Region;
 import com.app.conation.provider.TodayDonationStatusProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
 
 @Transactional
 @Service

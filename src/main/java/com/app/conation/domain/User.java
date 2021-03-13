@@ -1,6 +1,5 @@
 package com.app.conation.domain;
 
-import com.app.conation.config.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;

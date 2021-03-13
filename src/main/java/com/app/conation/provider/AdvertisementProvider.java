@@ -1,10 +1,10 @@
 package com.app.conation.provider;
 
 import com.app.conation.domain.Advertisement;
-import com.app.conation.domain.AdvertisementRepository;
+import com.app.conation.repository.AdvertisementRepository;
 import com.app.conation.domain.State;
 import com.app.conation.enums.AdvertisementCategory;
-import com.app.conation.exception.BaseException;
+import com.app.conation.advice.exceptions.BaseException;
 import com.app.conation.response.BaseResponseStatus;
 import com.app.conation.response.dto.GetAdvertisementRes;
 import org.springframework.beans.factory.annotation.Autowired;

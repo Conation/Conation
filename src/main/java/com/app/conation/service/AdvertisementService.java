@@ -1,20 +1,21 @@
 package com.app.conation.service;
 
 import com.app.conation.domain.*;
-import com.app.conation.exception.NotExistUserException;
 import com.app.conation.provider.AdvertisementProvider;
 import com.app.conation.provider.RegionProvider;
-import com.app.conation.request.PatchAdvertisementReq;
-import com.app.conation.request.PostAdvertisementReq;
-import com.app.conation.request.ViewAdvertisementReq;
+import com.app.conation.repository.AdvertisementRepository;
+import com.app.conation.repository.UserRepository;
+import com.app.conation.requestdto.PatchAdvertisementReq;
+import com.app.conation.requestdto.PostAdvertisementReq;
+import com.app.conation.requestdto.ViewAdvertisementReq;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import static com.app.conation.config.Constant.DEFAULT_VIEW_COUNT;
-import static com.app.conation.config.Constant.ONE;
+import static com.app.conation.util.Constant.DEFAULT_VIEW_COUNT;
+import static com.app.conation.util.Constant.ONE;
 
 @Transactional
 @Service
